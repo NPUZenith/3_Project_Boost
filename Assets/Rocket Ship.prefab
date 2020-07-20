@@ -140,12 +140,12 @@ Rigidbody:
   m_GameObject: {fileID: 6096561038641359614}
   serializedVersion: 2
   m_Mass: 0.1
-  m_Drag: 0
+  m_Drag: 0.2
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 56
   m_CollisionDetection: 0
 --- !u!114 &425804367
 MonoBehaviour:
@@ -500,7 +500,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 2af364ac09dbfb74990dd48ac00f2b73, type: 2}
+  - {fileID: 2100000, guid: 8044657f32f5dce4a990726720586d4a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -593,7 +593,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 2af364ac09dbfb74990dd48ac00f2b73, type: 2}
+  - {fileID: 2100000, guid: 8044657f32f5dce4a990726720586d4a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
