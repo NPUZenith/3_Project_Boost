@@ -6,6 +6,10 @@ using UnityEngine;
 
 public class Rocket : MonoBehaviour
 {
+
+    [SerializeField] float rcsThrust = 100f;
+    [SerializeField] float mainthrust = 100f;
+
     Rigidbody rigidBody;
     AudioSource audioSource;
 
@@ -25,9 +29,12 @@ public class Rocket : MonoBehaviour
 
     private void Thrust()
     {
+
+        float thrustThisFrame = mainthrust * Time.deltaTime;
+
         if (Input.GetKey(KeyCode.Space)) // Allows for thrusting while rotating
         {
-            rigidBody.AddRelativeForce(Vector3.up);
+            rigidBody.AddRelativeForce(Vector3.up * thrustThisFrame);
             if (!audioSource.isPlaying) // So tha it doesn't layer on top of each other
             {
                 audioSource.Play();
@@ -43,13 +50,15 @@ public class Rocket : MonoBehaviour
     {
         rigidBody.freezeRotation = true; // take manual control of rotation
 
+        float rotationThisFrame = rcsThrust * Time.deltaTime;
+
         if (Input.GetKey(KeyCode.A))
         {
-            transform.Rotate(Vector3.forward);
+            transform.Rotate(Vector3.forward * rotationThisFrame);
         }
         else if (Input.GetKey(KeyCode.D))
         {
-            transform.Rotate(-Vector3.forward);
+            transform.Rotate(-Vector3.forward * rotationThisFrame);
         }
 
         rigidBody.freezeRotation = false; // resume physics control of rotation
