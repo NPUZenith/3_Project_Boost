@@ -4,14 +4,16 @@ using UnityEngine.SceneManagement;
 
 public class Rocket : MonoBehaviour
 {
-
-    // todo: hit lighting bug
-
     [SerializeField] float rcsThrust = 100f;
     [SerializeField] float mainthrust = 100f;
+
     [SerializeField] AudioClip mainEngine;
     [SerializeField] AudioClip death;
     [SerializeField] AudioClip levelFinish;
+
+    [SerializeField] ParticleSystem mainEngineParticles;
+    [SerializeField] ParticleSystem deathParticles;
+    [SerializeField] ParticleSystem levelFinishParticles;
 
     Rigidbody rigidBody;
     AudioSource audioSource;
@@ -30,7 +32,6 @@ public class Rocket : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // todo somwhere stop sound on death
         if (state == State.Living)
         {
             RespondToThrustInput();
@@ -60,6 +61,7 @@ public class Rocket : MonoBehaviour
         state = State.Transcending;
         audioSource.Stop();
         audioSource.PlayOneShot(levelFinish);
+        levelFinishParticles.Play();
         Invoke("LoadNextLevel", 1f); // Parameterize the time
     }
 
@@ -68,6 +70,7 @@ public class Rocket : MonoBehaviour
         state = State.Dying;
         audioSource.Stop();
         audioSource.PlayOneShot(death);
+        deathParticles.Play();
         Invoke("LoadLevel1", 1f); // Parameterize this too
     }
 
@@ -92,16 +95,18 @@ public class Rocket : MonoBehaviour
         else
         {
             audioSource.Stop();
+            mainEngineParticles.Stop();
         }
     }
 
     private void ApplyThrust(float thrustThisFrame)
     {
         rigidBody.AddRelativeForce(Vector3.up * thrustThisFrame);
-        if (!audioSource.isPlaying) // So tha it doesn't layer on top of each other
+        if (!audioSource.isPlaying) // So that it doesn't layer on top of each other
         {
             audioSource.PlayOneShot(mainEngine);
         }
+        mainEngineParticles.Play();
     }
 
     private void RespondToRotateInput()
