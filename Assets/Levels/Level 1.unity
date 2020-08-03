@@ -34,11 +34,11 @@ RenderSettings:
   m_SpotCookie: {fileID: 10001, guid: 0000000000000000e000000000000000, type: 0}
   m_DefaultReflectionMode: 0
   m_DefaultReflectionResolution: 128
-  m_ReflectionBounces: 1
+  m_ReflectionBounces: 2
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
-  m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44455755, g: 0.48803782, b: 0.5408967, a: 1}
+  m_Sun: {fileID: 1131801556137678987, guid: 96ae597214ff0254299a4a3d82ee5209, type: 3}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3909,56 +3909,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1131801556137678987, guid: 96ae597214ff0254299a4a3d82ee5209,
-        type: 3}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1131801556137678987, guid: 96ae597214ff0254299a4a3d82ee5209,
-        type: 3}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1131801556137678987, guid: 96ae597214ff0254299a4a3d82ee5209,
-        type: 3}
-      propertyPath: m_Color.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1131801556137678987, guid: 96ae597214ff0254299a4a3d82ee5209,
-        type: 3}
-      propertyPath: m_Intensity
-      value: 2.53
-      objectReference: {fileID: 0}
-    - target: {fileID: 1131801556137678987, guid: 96ae597214ff0254299a4a3d82ee5209,
-        type: 3}
-      propertyPath: m_Shadows.m_Type
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1131801556137678987, guid: 96ae597214ff0254299a4a3d82ee5209,
-        type: 3}
-      propertyPath: m_Shadows.m_Strength
-      value: 0.298
-      objectReference: {fileID: 0}
-    - target: {fileID: 1131801556137678987, guid: 96ae597214ff0254299a4a3d82ee5209,
-        type: 3}
-      propertyPath: m_RenderMode
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1131801556137678987, guid: 96ae597214ff0254299a4a3d82ee5209,
-        type: 3}
-      propertyPath: m_CullingMask.m_Bits
-      value: 4294967295
-      objectReference: {fileID: 0}
-    - target: {fileID: 1131801556137678987, guid: 96ae597214ff0254299a4a3d82ee5209,
-        type: 3}
-      propertyPath: m_Type
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1131801556137678987, guid: 96ae597214ff0254299a4a3d82ee5209,
-        type: 3}
-      propertyPath: m_Lightmapping
-      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1131801556137678988, guid: 96ae597214ff0254299a4a3d82ee5209,
         type: 3}
