@@ -86,11 +86,9 @@ public class Rocket : MonoBehaviour
 
     private void RespondToThrustInput()
     {
-        float thrustThisFrame = mainthrust * Time.deltaTime;
-
         if (Input.GetKey(KeyCode.Space)) // Allows for thrusting while rotating
         {
-            ApplyThrust(thrustThisFrame);
+            ApplyThrust();
         }
         else
         {
@@ -99,9 +97,9 @@ public class Rocket : MonoBehaviour
         }
     }
 
-    private void ApplyThrust(float thrustThisFrame)
+    private void ApplyThrust()
     {
-        rigidBody.AddRelativeForce(Vector3.up * thrustThisFrame);
+        rigidBody.AddRelativeForce(Vector3.up * mainthrust * Time.deltaTime);
         if (!audioSource.isPlaying) // So that it doesn't layer on top of each other
         {
             audioSource.PlayOneShot(mainEngine);
